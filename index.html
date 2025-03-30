@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de SALAM Ahmad, développeur Full Stack">
+    <title>Portfolio - SALAM Ahmad</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+    <script src="js/index.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="preloader">
+        <div class="loader"><i class="fas fa-globe"></i></div>
+    </div>
+    <div id="particles-js"></div>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-brand"><a class="navbar-brand" href="#home">SALAM Ahmad</a></div>
+            <button class="navbar-toggle" aria-label="Ouvrir le menu"><i class="fas fa-bars"></i></button>
+            <ul class="navbar-menu">
+                <li><a href="#index.html">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <img src="/assets/img/me2.jpeg" alt="Photo de profil" class="image" loading="lazy">
+                <div class="overlay">
+                    <div class="text-photo">SALAM Ahmad</div>
+                </div>
+            </div>
+            <div class="intro paragraphe">
+                <h1 class="h1">Bonjour, je suis SALAM Ahmad</h1>
+                <p class="bla">Développeur Full Stack - Back-end & Front-end</p>
+                <p class="bla">Créateur de solutions numériques modernes et performantes.</p>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2 class="section-title">À propos de moi</h2>
+            <div class="about-content paragraphe">
+                <p>Je suis un développeur passionné avec une expertise en création des pages web dynamiques. J'aime
+                    relever des défis
+                    techniques et transformer des idées en réalités numériques.</p>
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                    alt="À propos" loading="lazy">
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <h2 class="section-title">Compétences</h2>
+            <div class="skills-grid">
+                <div class="skill-item paragraphe">
+                    <img src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png" alt="HTML"
+                        class="skill-image" loading="lazy">
+                    <p>HTML</p>
+                </div>
+                <div class="skill-item paragraphe">
+                    <img src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_1280.png" alt="CSS"
+                        class="skill-image" loading="lazy">
+                    <p>CSS</p>
+                </div>
+                <div class="skill-item paragraphe">
+                    <img src="https://cdn.pixabay.com/photo/2015/04/23/17/41/javascript-736400_1280.png"
+                        alt="JavaScript" class="skill-image" loading="lazy">
+                    <p>JavaScript</p>
+                </div>
+                <div class="skill-item paragraphe">
+                    <img src="https://cdn.pixabay.com/photo/2013/07/12/16/35/php-151199_1280.png" alt="PHP"
+                        class="skill-image" loading="lazy">
+                    <p>PHP</p>
+                </div>
+                <div class="skill-item paragraphe">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React"
+                        class="skill-image" loading="lazy">
+                    <p>React</p>
+                </div>
+                <div class="skill-item paragraphe">
+                    <img src="https://upload.wikimedia.org/wikipedia/fr/6/62/MySQL.svg" alt="MySQL" class="skill-image"
+                        loading="lazy">
+                    <p>MySQL</p>
+                </div>
+                <div class="skill-item paragraphe">
+                    <img src="https://cdn.pixabay.com/photo/2012/04/12/13/31/penguin-30043_1280.png" alt="Linux"
+                        class="skill-image" loading="lazy">
+                    <p>Linux</p>
+                </div>
+                <div class="skill-item paragraphe">
+                    <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/1/14/Windows_logo_-_2006.svg/1200px-Windows_logo_-_2006.svg.png"
+                        alt="Windows" class="skill-image" loading="lazy">
+                    <p>Windows</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <h2 class="section-title">Projets</h2>
+            <div class="project-grid">
+                <div class="project-item paragraphe" data-image="assets/img/Puissance_4.png">
+                    <img src="assets/img/Puissance_4.png" alt="Puissance 4" loading="lazy">
+                    <h3>Puissance 4</h3>
+                    <p>Un jeu interactif codé en JavaScript.</p>
+                    <p>Avec la possibilité de personnaliser votre partie.</p>
+                </div>
+                <div class="project-item paragraphe" data-image="assets/img/My_Cinema.png">
+                    <img src="assets/img/My_Cinema.png" alt="Puissance 4" loading="lazy">
+                    <h3>My Cinema</h3>
+                    <p>Interface de gestion de cinéma programmée par PHP et MySQL / JavaScript.</p>
+                    <p>Il vous permet de choisir un film et vous fournit également des interfaces d'administration.</p>
+                </div>
+                <div class="project-item paragraphe" data-image="assets/img/My_Meetic.png">
+                    <img src="assets/img/My_Meetic.png" alt="Puissance 4" loading="lazy">
+                    <h3>My Meetic</h3>
+                    <p>Interface d'application de rencontre similaire à My Meetic programmée par PHP/MYSQL/JS/HTML/CSS.
+                    </p>
+                    <p>Avec le Méthode de MVC.</p>
+                </div>
+                <div class="project-item paragraphe" data-image="assets/img/Spotify.png">
+                    <img src="assets/img/Spotify.png" alt="Puissance 4" loading="lazy">
+                    <h3>Music time</h3>
+                    <p>Une page web similaire à Spotify réaliser avec React et les API.</p>
+                    <p>Vous permet de mettre la musique et les rechercher par Artistes ou Albums.</p>
+                </div>
+            </div>
+            <div id="lightbox" class="lightbox">
+                <span class="close-lightbox">×</span>
+                <img id="lightbox-img" src="" alt="Projet">
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-info paragraphe">
+                <p>Email: <a href="mailto:Amdslm02@gmail.com">Amdslm02@gmail.com</a></p>
+                <div class="social-links">
+                    <a href="https://github.com/Amd-Slm01" target="_blank" class="social-icon"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/amd-slm01/" target="_blank" class="social-icon"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="/assets/cv.pdf" target="_blank" class="cv">CV <i class="fas fa-file-pdf"></i></a>
+                </div>
+            </div>
+            <form class="contact-form paragraphe">
+                <input type="text" name="name" placeholder="Nom" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Message" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    </main>
+
+    <button class="scroll-top"><i class="fas fa-arrow-up"></i></button>
+</body>
+
+</html>
