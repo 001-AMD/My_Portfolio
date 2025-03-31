@@ -2,12 +2,13 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 const app = express();
-const port = 3001;
 
+// Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: 'https://001-amd.github.io/My_Portfolio/' }));
 
+// Configuration de Nodemailer
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -16,6 +17,7 @@ const transporter = nodemailer.createTransport({
     },
 });
 
+// Route pour envoyer un email
 app.post('/send-email', (req, res) => {
     const { name, email, message } = req.body;
 
@@ -37,6 +39,8 @@ app.post('/send-email', (req, res) => {
     });
 });
 
+// Port dynamique pour l’hébergement
+const port = process.env.PORT || 3001;
 app.listen(port, () => {
-    console.log(`Serveur démarré sur http://localhost:${port}`);
+    console.log(`Serveur démarré sur le port ${port}`);
 });
