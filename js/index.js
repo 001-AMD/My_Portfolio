@@ -126,38 +126,4 @@ document.addEventListener("DOMContentLoaded", () => {
             sections[currentSection].scrollIntoView({ behavior: "smooth" });
         }
     }
-
-    // Gestion du formulaire de contact
-    const contactForm = document.querySelector(".contact-form");
-    if (contactForm) {
-        contactForm.addEventListener("submit", async (e) => {
-            e.preventDefault(); // Empêche le rechargement de la page
-
-            const formData = {
-                name: contactForm.querySelector('input[name="name"]').value,
-                email: contactForm.querySelector('input[name="email"]').value,
-                message: contactForm.querySelector('textarea[name="message"]').value,
-            };
-
-            try {
-                const response = await fetch('http://localhost:3001/send-email', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData),
-                });
-
-                if (response.ok) {
-                    alert('Email envoyé avec succès !');
-                    contactForm.reset(); // Réinitialise le formulaire
-                } else {
-                    alert('Erreur lors de l\'envoi de l\'email.');
-                }
-            } catch (error) {
-                console.error('Erreur:', error);
-                alert('Une erreur est survenue.');
-            }
-        });
-    }
 });
