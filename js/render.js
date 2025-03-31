@@ -8,21 +8,20 @@ document.querySelector('.contact-form').addEventListener('submit', async (e) => 
     };
 
     try {
-        const response = await fetch('https://my-portfolio-lc0s.onrender.com', {
+        const response = await fetch('https://my-portfolio-lc0s.onrender.com/send-email', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData),
         });
 
+        const result = await response.json();
         if (response.ok) {
             alert('Email envoyé avec succès !');
         } else {
-            alert('Erreur lors de l\'envoi.');
+            alert(`Erreur : ${result.message || 'Échec de l\'envoi'}`);
         }
     } catch (error) {
-        console.error('Erreur:', error);
-        alert('Une erreur est survenue.');
+        console.error('Erreur réseau :', error);
+        alert('Une erreur réseau est survenue.');
     }
 });
