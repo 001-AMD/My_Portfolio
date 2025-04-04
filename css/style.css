@@ -1,3 +1,17 @@
+/* Variables CSS pour réutilisation */
+:root {
+    --primary-bg: #0d1b2a;
+    --text-color: #e0e0e0;
+    --accent-purple: #8a2be2;
+    --accent-pink: #ff69b4;
+    --shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    --border-radius: 15px;
+    --light-bg: #f0f0f0;
+    /* Ajout pour mode clair */
+    --light-text: #333;
+    /* Ajout pour mode clair */
+}
+
 /* Réinitialisation et base */
 * {
     margin: 0;
@@ -13,6 +27,10 @@ body {
     color: #e0e0e0;
     overflow-x: hidden;
     position: relative;
+    line-height: 1.6;
+    /* Ajout : améliore la lisibilité */
+    transition: background 0.3s ease, color 0.3s ease;
+    /* Ajout : transition pour mode sombre/clair */
 }
 
 #particles-js {
@@ -119,6 +137,8 @@ body:hover::before {
     position: sticky;
     top: 0;
     z-index: 1000;
+    transition: background 0.3s ease;
+    /* Ajout : transition pour mode sombre/clair */
 }
 
 .navbar-brand {
@@ -152,6 +172,13 @@ body:hover::before {
     font-size: clamp(1rem, 2vw, 1.2rem);
     padding: 0.5rem 1rem;
     transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-menu li a.active {
+    color: #ff69b4;
+    font-weight: bold;
+    background: rgba(255, 105, 180, 0.3);
+    border-radius: 25px;
 }
 
 .navbar-menu li a::before {
@@ -347,7 +374,7 @@ video {
 /* Animation Scroll */
 .paragraphe {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(30px);
     transition: all 0.6s ease-in-out;
 }
 
@@ -500,21 +527,6 @@ video {
     }
 }
 
-.close-lightbox {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 2rem;
-    color: #fff;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    z-index: 3100;
-}
-
-.close-lightbox:hover {
-    transform: rotate(90deg);
-}
-
 /* Contact */
 .contact {
     text-align: center;
@@ -612,32 +624,41 @@ video {
 .contact-form button:hover {
     background: #ff69b4;
     transform: scale(1.05);
+    animation: bounce 0.5s ease;
+    /* Ajout : micro-interaction */
 }
 
 /* Scroll Top Button */
 .scroll-top {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
+    bottom: 20px;
+    right: 20px;
     background: #8a2be2;
+    color: #fff;
     border: none;
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    color: #fff;
     font-size: 1.5rem;
     cursor: pointer;
     opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .scroll-top.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(1);
+    z-index: 1001;
 }
 
 .scroll-top:hover {
     transform: scale(1.1);
+    animation: bounce 0.5s ease;
+    /* Ajout : micro-interaction */
 }
 
 /* Media Queries */
@@ -645,6 +666,13 @@ video {
     .navbar {
         padding: 0.5rem 1rem;
         background: rgba(255, 255, 255, 0.1);
+    }
+
+    .scroll-top {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        z-index: 1001;
     }
 
     .navbar-menu {
@@ -692,6 +720,18 @@ video {
     .skill-item:not(:last-child)::after {
         width: 80%;
     }
+
+    #competences-rncp {
+        padding: 1rem;
+    }
+
+    #competences-rncp h2 {
+        font-size: 1.5rem;
+    }
+
+    #competences-rncp li {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -722,4 +762,164 @@ video {
     .project-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Style de la section Compétences RNCP */
+#competences-rncp {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 2rem auto;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+#competences-rncp:hover {
+    transform: scale(1.02);
+}
+
+#competences-rncp h2 {
+    font-size: 2rem;
+    color: #8a2be2;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+#competences-rncp h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background-color: #ff69b4;
+}
+
+#competences-rncp ul {
+    list-style: none;
+    padding: 0;
+}
+
+#competences-rncp li {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+#competences-rncp li:hover {
+    color: #ff69b4;
+}
+
+#competences-rncp li i {
+    margin-right: 0.5rem;
+    color: #8a2be2;
+    transition: transform 0.3s ease;
+}
+
+#competences-rncp li:hover i {
+    transform: rotate(360deg);
+}
+
+/* Ajouts : Accessibilité et UX */
+:focus {
+    outline: 2px solid #ff69b4;
+    outline-offset: 2px;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Ajout : Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    margin-top: 2rem;
+    color: #e0e0e0;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Ajout : Animation pour la navbar */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ajout : Micro-interaction rebond */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Ajout : Mode sombre/clair */
+body.light-mode {
+    background: var(--light-bg);
+    color: var(--light-text);
+}
+
+body.light-mode .navbar {
+    background: linear-gradient(45deg, rgba(138, 43, 226, 0.5), rgba(255, 105, 180, 0.5));
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .navbar-menu li a {
+    color: var(--light-text);
+}
+
+body.light-mode .navbar-menu li a:hover,
+body.light-mode .navbar-menu li a.active {
+    color: var(--accent-pink);
+}
+
+body.light-mode .navbar-toggle {
+    color: var(--light-text);
+}
+
+body.light-mode .scroll-top {
+    background: var(--accent-purple);
+}
+
+body.light-mode footer {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--light-text);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .contact-form input,
+body.light-mode .contact-form textarea {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--light-text);
+    border-color: var(--accent-purple);
+}
+
+body.light-mode .contact-form button {
+    background: var(--accent-purple);
+}
+
+body.light-mode .contact-form button:hover {
+    background: var(--accent-pink);
 }
