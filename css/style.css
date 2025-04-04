@@ -145,7 +145,7 @@ body:hover::before {
     font-size: clamp(1.2rem, 2.5vw, 1.8rem);
     font-weight: bold;
     background: linear-gradient(90deg, #8a2be2, #ff69b4);
-    -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
     transition: transform 0.3s ease;
     padding: 0.5rem 1rem;
