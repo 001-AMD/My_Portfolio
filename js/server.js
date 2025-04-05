@@ -1,16 +1,16 @@
+require('dotenv').config();
 const express = require('express');
 const nodemailer = require('nodemailer');
 const app = express();
 
 app.use(express.json());
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://001-amd.github.io');
+    res.header('Access-Control-Allow-Origin', 'https://001-amd.github.io , https://github.com/001-AMD/My_Portfolio , https://my-portfolio-lc0s.onrender.com');
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     if (req.method === 'OPTIONS') return res.sendStatus(200);
     next();
 });
-
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -23,8 +23,8 @@ app.post('/send-email', async (req, res) => {
     const { name, email, message } = req.body;
 
     const mailOptions = {
-        from: 'amdslm00@gmail.com',
-        to: 'amdslm01@gmail.com',
+        from: process.env.EMAIL_USER,
+        to: process.env.EMAIL_USER_RECIPIENT,
         subject: `Nouveau message de ${name}`,
         text: `De : ${email}\nMessage : ${message}`,
     };
